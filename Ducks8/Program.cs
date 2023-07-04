@@ -17,13 +17,23 @@ namespace Ducks8
                 new Duck() { Kind = KindOfDuck.Loon, Size = 13 },
             };
 
-            IComparer<Duck> sizeComparer = new DuckComparerBySize();
-            IComparer<Duck> kindComparer = new DuckComparerByKind();
+            //IComparer<Duck> sizeComparer = new DuckComparerBySize();
+            //IComparer<Duck> kindComparer = new DuckComparerByKind();
 
-            ducks.Sort(sizeComparer);
+            //ducks.Sort(sizeComparer);
+            //PrintDucks(ducks);
+            //Console.WriteLine("\n");
+            //ducks.Sort(kindComparer);
+            //PrintDucks(ducks);
+
+            DuckComparer comparer = new DuckComparer();
+            Console.WriteLine("\nSorting by kind then size\n");
+            comparer.SortBy = SortCriteria.KindThenSize;
+            ducks.Sort(comparer);
             PrintDucks(ducks);
-            Console.WriteLine("\n");
-            ducks.Sort(kindComparer);
+            Console.WriteLine("\nSorting by size then kind\n");
+            comparer.SortBy = SortCriteria.SizeThenKind;
+            ducks.Sort(comparer);
             PrintDucks(ducks);
         }
         public static void PrintDucks(List<Duck> ducks)

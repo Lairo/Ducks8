@@ -15,11 +15,10 @@ namespace Ducks8
         {
             if (Size > duckToCompare.Size)
                 return 1;
-            else if (Size < duckToCompare.Size)
+            if (Size < duckToCompare.Size)
                 return -1;
             else
                 return 0;
         }
-
     }
 }

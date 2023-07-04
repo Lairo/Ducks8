@@ -17,6 +17,13 @@ namespace Ducks8
                 new Duck() { Kind = KindOfDuck.Loon, Size = 13 },
             };
 
+            IComparer<Duck> sizeComparer = new DuckComparerBySize();
+            IComparer<Duck> kindComparer = new DuckComparerByKind();
+
+            ducks.Sort(sizeComparer);
+            PrintDucks(ducks);
+            Console.WriteLine("\n");
+            ducks.Sort(kindComparer);
             PrintDucks(ducks);
         }
         public static void PrintDucks(List<Duck> ducks)

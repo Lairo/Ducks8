@@ -9,8 +9,8 @@ namespace Ducks8
         {
             List<Duck> ducks = new List<Duck>()
             {
-                new Duck() { Kind = KindOfDuck.Mallard, Size = 17 },
-                new Duck() { Kind = KindOfDuck.Muscovy, Size = 18 },
+                new Duck() { Kind = 0, Size = 17 },
+                new Duck() { Kind = (KindOfDuck)1, Size = 18 },
                 new Duck() { Kind = KindOfDuck.Loon, Size = 14 },
                 new Duck() { Kind = KindOfDuck.Muscovy, Size = 11 },
                 new Duck() { Kind = KindOfDuck.Mallard, Size = 14 },
